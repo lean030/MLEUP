@@ -15,7 +15,7 @@ def init_seed(seed=None):
     torch.cuda.manual_seed_all(seed)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--datasets', default='30music', help='datasets name: Tmall/diginetica/30music')
+parser.add_argument('--datasets', default='Tmall', help='datasets name: Tmall/diginetica/30music')
 parser.add_argument('--m', type=int, default=14, help='the number of sessions in a group')
 parser.add_argument('--frequency', type=int, default=10)
 parser.add_argument('--batch_size', type=int, default=100, help='input batch size')
@@ -31,7 +31,7 @@ parser.add_argument('--beta', type=float, default=0.3, help='ssl task maginitude
 parser.add_argument('--si_dc', type=float, default=2, help='session impact rate decay rate')
 parser.add_argument('--alpha', type=float, default=0.2, help='Alpha for the leaky_relu.')
 parser.add_argument('--sample_order', type=int, default=3)
-parser.add_argument('--is_train', type=bool, default=True)
+parser.add_argument('--is_train', type=bool, default=False)
 opt = parser.parse_args()
 
 def main():
