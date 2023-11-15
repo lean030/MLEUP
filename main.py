@@ -118,13 +118,6 @@ def main():
             print('\tLoss:\t%.3f' % total_loss)
             print('end training: ', datetime.datetime.now())
 
-            checkpoint = {
-                'model': model.state_dict(),
-                'optimizer': optimizer.state_dict(),
-                'epoch': epoch
-            }
-            torch.save(checkpoint, opt.datasets + '/result_best_%s.pth' % (str(epoch)))
-
             print('start predicting: ', datetime.datetime.now())
             metrics = {}
             for K in top_K:
